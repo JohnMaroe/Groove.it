@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  width: 40rem;
+  max-width: 40rem;
+}
+
+.container > img {
+  width: 25rem;
+  margin-bottom: 6rem;
+}
+
+.container strong {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.container div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 3rem;
+}
+
+.container div img {
+  margin-right: 2rem;
+  height: 2.5rem;
+  color: var(--text-highlight)
+}
+
+.container div span {
+  font-size: 1.5rem;
+  color: var(--text-highlight)
+}
+
+.container form {
+  max-width: 20rem;
+
+  display: flex;
+
+}
+
+.container form input {
+  border: 0;
+  outline: 0;
+
+  background: var(--blue);
+  background: linear-gradient(90deg, rgba(73,83,184,1) 40%, rgba(73,83,184,0.2) 100%);
+  color: var(--text-highlight);
+
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.container form input::placeholder {
+  color: var(--text-highlight)
+}
+
+.container form button {
+  border: 0;
+  padding: 2rem;
+  color: #eee;
+  background: rgb(73,83,184,0.8);
+  border-radius: 3px;
+
+  transition: all 200ms;
+}
+
+.container form button i {
+  font-size: 1.5rem;
+}
+
+.container form button:hover {
+  background: var(--green);
+}
