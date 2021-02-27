@@ -14,7 +14,7 @@ export function NavBar() {
     <nav className={styles.container}>
       <img src="/mini-logo.svg" alt="Move-it logo icon"/>
 
-      <section>
+      <main>
         <input 
           type="radio" 
           defaultChecked={navBarIconOn === 'home'} 
@@ -38,8 +38,7 @@ export function NavBar() {
           }}
         />
         <label htmlFor="leaderboard"><i className="fas fa-medal" /></label>
-
-      </section>
+      </main>
 
       <div onClick={() => setIsConfigUpModalOpen(true)}><i className="fas fa-cog" /></div>
     </nav>
