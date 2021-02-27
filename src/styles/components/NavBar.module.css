@@ -6,7 +6,7 @@
 
   width: 7.5rem;
 
-  box-shadow: 8px 0 20px rgba(0,0,0,0.1);
+  box-shadow: 8px 0 20px rgba(0,0,0,0.05);
 }
 
 .container img {
@@ -15,7 +15,7 @@
   left: 2rem;
 }
 
-.container div {
+.container section {
   width: 100%;
   height: 100vh;
 
@@ -23,12 +23,59 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 3rem;
+}
+
+.container section label {
+  width: 100%;
+  height: 3.3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--background);
+  color: var(--text);
+
+  border-left: 4px solid transparent;
+  border-radius: 4px 0 0 4px;
+  cursor: pointer;
+}
+
+.container section label:hover {
+  border-left: 4px solid #5965e077;
+}
+
+.container section input:checked + label {
+  border-left: 4px solid var(--blue);
+}
+
+.container section input:checked + label i {
+  color: var(--blue);
+}
+
+.container section input {
+  display: none;
+}
+
+.container div {
+  position: absolute;
+  bottom: 1rem;
+  left: 2.4rem;
+
+  width: 100%;
+  height: 4rem;
+}
+
+.container div i:hover {
+  color: var(--blue);
 }
 
 .container div i {
-  width: 40px;
-  margin-bottom: 2rem;
-  border-left: 5px solid var(--green);
-
+  font-size: 2.5rem;
   cursor: pointer;
+}
+
+.container i {
+  font-size: 1.7rem;
 }

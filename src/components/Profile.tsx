@@ -11,7 +11,7 @@ export function Profile() {
       <div>
         <strong>{user}</strong>
         <p>
-          <img src="icons/level.svg" alt="Level icon" />
+          <img  src="icons/level.svg" alt="Level icon" />
           Level {level}
         </p>
       </div>

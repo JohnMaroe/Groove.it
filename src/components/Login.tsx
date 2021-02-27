@@ -7,7 +7,7 @@ import styles from '../styles/components/Login.module.css';
 export function Login() {
   const [tempUser, setTempUser] = useState('');
 
-  const router = useRouter()
+  const router = useRouter();
 
   function handleSubmit(e) {
     e.preventDefault();
