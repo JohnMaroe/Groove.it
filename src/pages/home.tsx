@@ -33,7 +33,7 @@ export default function Home(props: HomeProps) {
 
         <ExperienceBar />
 
-        <NavBar />
+        <NavBar icon="home" />
 
         <CountdownProvider>
           <section>
@@ -47,6 +47,8 @@ export default function Home(props: HomeProps) {
             </div>
           </section>
         </CountdownProvider>
+
+        <div className={styles.decorationSlash} />
       </div>
     </ChallengesProvider>
   )

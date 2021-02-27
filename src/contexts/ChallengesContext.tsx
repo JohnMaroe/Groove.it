@@ -1,4 +1,4 @@
-import { createContext, useState, ReactNode, useEffect } from 'react';
+import { createContext, useState, ReactNode, useEffect, useCallback } from 'react';
 import Cookies from 'js-cookie';
 
 import { LevelUpModal } from '../components/LevelUpModal';
@@ -20,7 +20,6 @@ interface ChallengesContextData {
   experienceToNextLevel: number;
   challengesCompleted: number;
   activeChallenge: Challenge;
-  navBarIconOn: string;
   levelUp: () => void;
   setUser: (user: string) => void;
   startNewChallenge: () => void;
@@ -29,14 +28,13 @@ interface ChallengesContextData {
   closeLevelUpModal: () => void;
   setIsConfigUpModalOpen: (modal: boolean) => void;
   resetProgress: () => void;
-  setNavBarIconOn: (icon: string) => void;
 }
 
 interface ChallengesProviderProps {
   children: ReactNode;
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
+  level?: number;
+  currentExperience?: number;
+  challengesCompleted?: number;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
@@ -52,8 +50,6 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
   const [isConfigUpModalOpen, setIsConfigUpModalOpen] = useState(false);
 
-  const [navBarIconOn, setNavBarIconOn] = useState('home');
-
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
 
   useEffect(() => {
@@ -63,9 +59,9 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
   }, []);
 
   useEffect(() => {
-    Cookies.set('level', String(level));
-    Cookies.set('currentExperience', String(currentExperience));
-    Cookies.set('challengesCompleted', String(challengesCompleted));
+    Cookies.set('level', String(level), { expires: 365 * 10 });
+    Cookies.set('currentExperience', String(currentExperience), { expires: 365 * 10 });
+    Cookies.set('challengesCompleted', String(challengesCompleted), { expires: 365 * 10 });
   }, [level, currentExperience, challengesCompleted]);
 
   function levelUp() {
@@ -130,7 +126,6 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
       experienceToNextLevel,
       challengesCompleted,
       activeChallenge,
-      navBarIconOn,
       levelUp,
       setUser,
       startNewChallenge,
@@ -139,7 +134,6 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
       closeLevelUpModal,
       setIsConfigUpModalOpen,
       resetProgress,
-      setNavBarIconOn,
     }}>
       { isLevelUpModalOpen ? 
         (

@@ -33,6 +33,8 @@
 body {
   background: var(--background);
   color: var(--text);
+
+  overflow: hidden;
 }
 
 body, input, textarea, button {

@@ -1,12 +1,16 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useRouter } from 'next/router'
 
 import { ChallengesContext } from '../contexts/ChallengesContext';
 
 import styles from '../styles/components/NavBar.module.css';
 
-export function NavBar() {
-  const { navBarIconOn, setNavBarIconOn, setIsConfigUpModalOpen } = useContext(ChallengesContext);
+interface NavBarProps {
+  icon: string;
+}
+
+export function NavBar({ icon }: NavBarProps) {
+  const { setIsConfigUpModalOpen } = useContext(ChallengesContext);
 
   const router = useRouter();
 
@@ -17,11 +21,10 @@ export function NavBar() {
       <main>
         <input 
           type="radio" 
-          defaultChecked={navBarIconOn === 'home'} 
+          defaultChecked={icon === 'home'} 
           name="nav-icons" 
           id="home"
           onClick={() => {
-            setNavBarIconOn('home');
             router.push('/home');
           }}
         />
@@ -29,11 +32,10 @@ export function NavBar() {
 
         <input 
           type="radio" 
-          defaultChecked={navBarIconOn === 'leaderboard'} 
+          defaultChecked={icon === 'leaderboard'}
           name="nav-icons" 
           id="leaderboard"
           onClick={() => {
-            setNavBarIconOn('leaderboard');
             router.push('/leaderboard');
           }}
         />

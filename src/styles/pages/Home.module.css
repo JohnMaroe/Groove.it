@@ -16,3 +16,20 @@
   gap: 6.25rem;
   align-content: center;
 }
+
+.container .decorationSlash {
+  width: 25rem;
+  height: 10rem;
+
+  position: absolute;
+  bottom: 0;
+  right: -16rem;
+
+  background: var(--blue);
+  transform: rotate(-45deg);
+}
+
+.container .decorationSlash:hover {
+  right: -14.5rem;
+  cursor: pointer;
+}
