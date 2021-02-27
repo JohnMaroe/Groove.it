@@ -7,19 +7,27 @@
   bottom: 0;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.blurOverlay {
+  filter: blur(3px);
 }
 
 .container {
   background: var(--white);
   width: 100%;
   max-width: 400px;
+  height: 350px;
+  max-height: 350px;
+  position: relative;
 
   padding: 2rem 3rem;
   border-radius: 5px;
 
-  box-shadow: 0 0 60px rgba(0,0,0,0.05);
+  box-shadow: 0 0 60px rgba(0,0,0,0.2);
   text-align: center;
   position: relative;
 }
@@ -52,4 +60,43 @@
   background: transparent;
   border: 0;
   font-size: 0;
+}
+
+.container div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.7rem;
+  border-top: 1px solid var(--gray-line);
+
+  cursor: pointer;
+  transition: all 120ms;
+}
+
+.container div span {
+  color: var(--blue-twitter);
+  font-weight: 600;
+}
+
+.container div img {
+  margin-left: 1rem;
+  width: 1.5rem;
+}
+
+.container div:hover {
+  background: var(--blue-twitter);
+}
+
+.container div:hover img {
+  filter: brightness(100); 
+}
+
+.container div:hover span {
+  color: var(--white);
 }

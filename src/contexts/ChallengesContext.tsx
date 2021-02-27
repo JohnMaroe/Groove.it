@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import { LevelUpModal } from '../components/LevelUpModal';
 
 import challenges from '../../challenges.json';
+import styles from '../styles/components/LevelUpModal.module.css'
 
 interface Challenge {
   type: 'body' | 'eye';
@@ -13,15 +14,18 @@ interface Challenge {
 
 interface ChallengesContextData {
   level: number;
+  user: string;
   currentExperience: number;
   experienceToNextLevel: number;
   challengesCompleted: number;
   activeChallenge: Challenge;
   levelUp: () => void;
+  setUser: (user: string) => void;
   startNewChallenge: () => void;
   resetChallenge: () => void;
   completeChallenge: () => void;
   closeLevelUpModal: () => void;
+  resetProgress: () => void;
 }
 
 interface ChallengesProviderProps {
@@ -34,6 +38,7 @@ interface ChallengesProviderProps {
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
 export function ChallengesProvider({ children, ...rest }: ChallengesProviderProps) {
+  const [user, setUser] = useState('');
   const [level, setLevel] = useState(rest.level ?? 1);
   const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
   const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
@@ -45,6 +50,8 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
 
   useEffect(() => {
     Notification.requestPermission();
+
+    setUser(Cookies.get('user'));
   }, []);
 
   useEffect(() => {
@@ -81,6 +88,12 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
     setActiveChallenge(null);
   }
 
+  function resetProgress() {
+    setLevel(1);
+    setCurrentExperience(0);
+    setChallengesCompleted(0);
+  }
+
   function completeChallenge() {
     if (!activeChallenge) {
       return;
@@ -104,17 +117,25 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
   return (
     <ChallengesContext.Provider value={{
       level,
+      user,
       currentExperience,
       experienceToNextLevel,
       challengesCompleted,
       activeChallenge,
       levelUp,
+      setUser,
       startNewChallenge,
       resetChallenge,
       completeChallenge,
       closeLevelUpModal,
+      resetProgress,
     }}>
-      {children}
+      { isLevelUpModalOpen ? 
+        (
+          <div className={styles.blurOverlay}>{children}</div>
+        ) :
+        children
+      }
 
       { isLevelUpModalOpen && <LevelUpModal /> }
     </ChallengesContext.Provider>
