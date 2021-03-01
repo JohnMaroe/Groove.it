@@ -21,6 +21,7 @@ interface ChallengesContextData {
   experienceToNextLevel: number;
   challengesCompleted: number;
   activeChallenge: Challenge;
+  isDarkMode: boolean;
   levelUp: () => void;
   setUser: (user: string) => void;
   startNewChallenge: () => void;
@@ -29,6 +30,7 @@ interface ChallengesContextData {
   closeLevelUpModal: () => void;
   setIsConfigUpModalOpen: (modal: boolean) => void;
   resetProgress: () => void;
+  setIsDarkMode: (boolean: boolean) => void;
 }
 
 interface ChallengesProviderProps {
@@ -50,6 +52,8 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
 
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
   const [isConfigUpModalOpen, setIsConfigUpModalOpen] = useState(false);
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
 
@@ -127,6 +131,7 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
       experienceToNextLevel,
       challengesCompleted,
       activeChallenge,
+      isDarkMode,
       levelUp,
       setUser,
       startNewChallenge,
@@ -135,6 +140,7 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
       closeLevelUpModal,
       setIsConfigUpModalOpen,
       resetProgress,
+      setIsDarkMode,
     }}>
       <CountdownProvider>
         { isLevelUpModalOpen ? 

@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* Go to DarkModeToggler for a complete list of variables */
 :root {
   --white: #fff;
   --background: #f2f3f5;

@@ -1,0 +1,35 @@
+.decorationSlash {
+  width: 25rem;
+  height: 10rem;
+
+  position: absolute;
+  bottom: 0;
+  right: -16rem;
+
+  background: var(--blue);
+  transform: rotate(-45deg);
+  transition: all 200ms;
+}
+
+.decorationSlash:hover {
+  right: -14.5rem;
+  cursor: pointer;
+}
+
+.decorationSlash:hover i {
+  transform: translateX(1rem);
+}
+
+.decorationSlash div {
+  position: relative;
+}
+
+.decorationSlash i {
+  position: absolute;
+  bottom: -4rem;
+  left: 5rem;
+  font-size: 3rem;
+  color: var(--white);
+
+  transition: all 200ms;  
+}

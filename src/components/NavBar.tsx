@@ -10,13 +10,13 @@ interface NavBarProps {
 }
 
 export function NavBar({ icon }: NavBarProps) {
-  const { setIsConfigUpModalOpen } = useContext(ChallengesContext);
+  const { isDarkMode, setIsConfigUpModalOpen } = useContext(ChallengesContext);
 
   const router = useRouter();
 
   return (
     <nav className={styles.container}>
-      <img src="/mini-logo.svg" alt="Move-it logo icon"/>
+      <img src="/mini-logo.svg" data-isdark={isDarkMode} alt="Move-it logo icon" />
 
       <main>
         <input 

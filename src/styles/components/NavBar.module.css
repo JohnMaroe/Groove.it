@@ -15,6 +15,10 @@
   left: 2rem;
 }
 
+.container img[data-isdark=true] {
+  filter: invert(66%) sepia(18%) saturate(1881%) hue-rotate(63deg) brightness(102%) contrast(88%);
+}
+
 .container main {
   width: 100%;
   height: 100vh;
@@ -43,7 +47,7 @@
 }
 
 .container main label:hover {
-  border-left: 4px solid #5965e077;
+  border-left: 4px solid var(--low-opacity);
 }
 
 .container main input:checked + label {

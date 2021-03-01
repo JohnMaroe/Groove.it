@@ -6,6 +6,7 @@ import { Countdown } from "../components/Countdown";
 import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from "../components/Profile";
 import { ChallengeBox } from "../components/ChallengeBox";
+import { DarkModeToggler } from '../components/darkModeToggler';
 
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
@@ -33,6 +34,8 @@ export default function Home(props: HomeProps) {
 
         <ExperienceBar />
 
+        <DarkModeToggler />
+
         <CountdownProvider>
           <NavBar icon="home" />
 
@@ -47,8 +50,6 @@ export default function Home(props: HomeProps) {
             </div>
           </section>
         </CountdownProvider>
-
-        <div className={styles.decorationSlash} />
       </div>
     </ChallengesProvider>
   )
