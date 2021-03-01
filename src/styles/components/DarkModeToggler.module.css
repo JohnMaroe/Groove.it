@@ -18,6 +18,7 @@
 
 .decorationSlash:hover i {
   transform: translateX(1rem);
+  animation: icon-move 1000ms ease;
 }
 
 .decorationSlash div {
@@ -31,5 +32,11 @@
   font-size: 3rem;
   color: var(--white);
 
-  transition: all 200ms;  
+  transition: all 200ms;
+}
+
+@keyframes icon-move {
+  from { transform: rotate(90deg) };
+  50% { transform: rotate(-90deg) };
+  to { transform: rotate(0) };
 }

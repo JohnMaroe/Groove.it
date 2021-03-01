@@ -15,7 +15,7 @@
   left: 2rem;
 }
 
-.container img[data-isdark=true] {
+.container img.darkmodeImg {
   filter: invert(66%) sepia(18%) saturate(1881%) hue-rotate(63deg) brightness(102%) contrast(88%);
 }
 

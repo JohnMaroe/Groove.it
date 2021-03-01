@@ -16,7 +16,11 @@ export function NavBar({ icon }: NavBarProps) {
 
   return (
     <nav className={styles.container}>
-      <img src="/mini-logo.svg" data-isdark={isDarkMode} alt="Move-it logo icon" />
+      <img 
+        src="/mini-logo.svg" 
+        alt="Move-it logo icon"  
+        className={isDarkMode ? styles.darkmodeImg : null}
+      />
 
       <main>
         <input 

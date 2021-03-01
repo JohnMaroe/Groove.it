@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useRouter } from 'next/router'
 import { ChallengesContext } from '../contexts/ChallengesContext';
 
@@ -15,7 +15,7 @@ export function ConfigModal() {
   const [minuteLeft, minuteRight] = String(minutesTemp).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(secondsTemp).padStart(2, '0').split('');
 
-  const { setIsConfigUpModalOpen, resetProgress } = useContext(ChallengesContext);
+  const { isDarkMode, setIsConfigUpModalOpen, resetProgress } = useContext(ChallengesContext);
   const { setTime } = useContext(CountdownContext);
 
   const router = useRouter();
@@ -45,12 +45,28 @@ export function ConfigModal() {
     setTime(timeInSeconds);
   }
 
+  useEffect(() => {
+    const close = (e) => {
+      if(e.keyCode === 27){
+        setIsConfigUpModalOpen(false);
+      }
+    }
+    window.addEventListener('keydown', close)
+  return () => window.removeEventListener('keydown', close)
+},[])
+
   return (
-    <div className={styles.overlay}>
+    <div 
+      className={`${styles.overlay} ${isDarkMode ? styles.overlayDark : null}`}
+    >
       { !isChangeTimeActive ? (
         <div className={styles.container}>
           <header>
-            <img src="/logo-full.svg" alt="Move it logo" />
+            <img 
+              src="/logo-full.svg" 
+              alt="Move it logo" 
+              className={isDarkMode ? styles.darkmodeImg : null}
+            />
             
             <button type="button" onClick={() => setIsConfigUpModalOpen(false)}>
               <img src="/icons/close.svg" alt="Close Modal Button" />
@@ -59,11 +75,17 @@ export function ConfigModal() {
 
           <main>
             <div onClick={() => {router.push('/api/exercises');}}>
-              <img src="/yoga.svg" alt="Woman doing yoga" />
+              { 
+                isDarkMode ? <img src="/images/yoga-dark.svg" alt="Woman doing yoga" />
+                : <img src="/images/yoga.svg" alt="Woman doing yoga" />
+              }
               <p>Veja todos os exercisos</p>
             </div>
             <div onClick={() => setIsChangeTimeActive(true)}>
-              <img src="/alarm.svg" alt="Alarm picture" />
+              { 
+                isDarkMode ? <img src="/images/alarm-dark.svg" alt="Alarm picture" />
+                : <img src="/images/alarm.svg" alt="Alarm picture" />
+              }
               <p>Mude a duração do countdown</p>
             </div>
           </main>
@@ -94,7 +116,11 @@ export function ConfigModal() {
       (
         <div className={styles.container}>
           <header>
-            <img src="/logo-full.svg" alt="Move it logo" />
+            <img 
+              src="/logo-full.svg" 
+              alt="Move it logo" 
+              className={isDarkMode ? styles.darkmodeImg : null}
+            />
             
             <button type="button" onClick={() => setIsConfigUpModalOpen(false)}>
               <img src="/icons/close.svg" alt="Close Modal Button" />

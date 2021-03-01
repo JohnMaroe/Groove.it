@@ -89,11 +89,11 @@
   border: 0;
   border-radius: 5px;
 
-  color: var(--white);
+  color: var(--title);
   font-size: 1rem;
   font-weight: 600;
 
-  transition: filter 0.2s;
+  transition: filter 0.2s, transform 200ms;
 }
 
 .challengeActive footer button.challengeFailedButton {
@@ -106,4 +106,5 @@
 
 .challengeActive footer button:hover {
   filter: brightness(0.9);
+  transform: scale(1.05);
 }
