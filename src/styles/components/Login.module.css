@@ -23,6 +23,12 @@
   align-items: center;
 
   margin-bottom: 3rem;
+  cursor: pointer;
+}
+
+.container div:hover i,
+.container div:hover span {
+  filter: brightness(2);
 }
 
 .container div i {

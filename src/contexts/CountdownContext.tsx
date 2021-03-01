@@ -8,6 +8,7 @@ interface CountdownContextData {
   isActive: boolean;
   startCountdown: () => void;
   resetCountdown: () => void;
+  setTime: (time: number) => void;
 }
 
 interface CountdownProviderProps {
@@ -25,9 +26,9 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
 
-  const minutes = Math.floor(time / 60);
-  const seconds = time % 60;
-
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+ 
   function startCountdown() {
     setIsActive(true);
   }
@@ -59,6 +60,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
       isActive,
       startCountdown,
       resetCountdown,
+      setTime,
     }}>
       {children}
     </CountdownContext.Provider>

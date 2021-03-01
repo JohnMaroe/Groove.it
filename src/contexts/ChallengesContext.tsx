@@ -6,6 +6,7 @@ import { LevelUpModal } from '../components/LevelUpModal';
 import challenges from '../../challenges.json';
 import styles from '../styles/components/LevelUpModal.module.css'
 import { ConfigModal } from '../components/ConfigModal';
+import { CountdownProvider } from './CountdownContext';
 
 interface Challenge {
   type: 'body' | 'eye';
@@ -135,16 +136,18 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
       setIsConfigUpModalOpen,
       resetProgress,
     }}>
-      { isLevelUpModalOpen ? 
-        (
-          <div className={styles.blurOverlay}>{children}</div>
-        ) :
-        children
-      }
+      <CountdownProvider>
+        { isLevelUpModalOpen ? 
+          (
+            <div className={styles.blurOverlay}>{children}</div>
+          ) :
+          children
+        }
 
-      { isConfigUpModalOpen && <ConfigModal /> }
+        { isConfigUpModalOpen && <ConfigModal /> }
 
-      { isLevelUpModalOpen && <LevelUpModal /> }
+        { isLevelUpModalOpen && <LevelUpModal /> }
+      </CountdownProvider>
     </ChallengesContext.Provider>
   );
 }

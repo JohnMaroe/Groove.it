@@ -62,6 +62,10 @@
   font-size: 0;
 }
 
+.container button:hover img {
+  filter: invert(29%) sepia(95%) saturate(1991%) hue-rotate(331deg) brightness(98%) contrast(86%);
+}
+
 .container div {
   position: absolute;
   bottom: 0;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 
 import styles from '../styles/components/Login.module.css';

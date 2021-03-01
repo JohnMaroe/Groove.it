@@ -1,5 +1,5 @@
 .overlay {
-  background: rgba(242, 243, 245, 0.5);
+  background: rgba(157, 158, 160, 0.5);
   position: fixed;
   top: 0;
   left: 0;
@@ -15,9 +15,9 @@
 .container {
   background: var(--white);
   width: 100%;
-  max-width: 600px;
-  height: 350px;
-  max-height: 400px;
+  max-width: 625px;
+  height: 440px;
+  max-height: 440px;
   position: relative;
 
   padding: 2rem 3rem;
@@ -26,4 +26,201 @@
   box-shadow: 0 0 60px rgba(0,0,0,0.2);
   text-align: center;
   position: relative;
+}
+
+
+/* HEADER */
+.container header > img {
+  position: absolute;
+  left: 1.8rem;
+  top: -1.6rem;
+
+  width: 9rem;
+  height: 9rem;
+  filter: invert(32%) sepia(26%) saturate(3368%) hue-rotate(214deg) brightness(88%) contrast(87%);
+}
+
+.container header button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+
+  background: transparent;
+  border: 0;
+  font-size: 0;
+}
+
+.container header button:hover img {
+  filter: invert(29%) sepia(95%) saturate(1991%) hue-rotate(331deg) brightness(98%) contrast(86%);
+}
+
+
+/* MAIN */
+.container main {
+  margin-top: 4rem;
+  margin-bottom: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container main div:first-child {
+  margin-right: 5rem;
+}
+
+.container main div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 220px;
+  height: 220px;
+  border-radius: 8px;
+
+  transition: all 350ms;
+  cursor: pointer;
+}
+
+.container main div:hover {
+  background:rgba(157, 158, 160, 0.5);
+}
+
+.container main div img[src="/yoga.svg"] {
+  padding-bottom: 2rem;
+}
+
+.container main div img {
+  width: 11rem;
+  height: 12rem;
+}
+
+.container main div p {
+  font-weight: 600;
+}
+
+
+/* COUNTDOWN CLOCK */
+.container section {
+  margin-top: 4rem;
+  margin-bottom: 1.3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 275px;
+  background: #dcdde077;
+  border-radius: 30px;
+}
+
+.container section aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 2rem;
+}
+
+.container section aside p {
+  font-size: 1rem;
+}
+
+.countdownContainer {
+  display: flex;
+  align-items: center;
+  font-family: Rajdhani;
+  font-weight: 600;
+  color: var(--title);
+}
+
+.countdownContainer > div {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
+  background: var(--white);
+  box-shadow: 0 0 60px rgba(0,0,0,0.05);
+  border-radius: 5px;
+  font-size: 8.5rem;
+  text-align: center;
+
+  padding: 5px;
+}
+
+.countdownContainer > div span {
+  flex: 1;
+  width: 68.3px;
+  
+  user-select: none;
+  cursor: pointer;
+}
+
+.countdownContainer > div span:first-child {
+  border-right: 1px solid #f0f1f3;
+}
+
+.countdownContainer > div span:last-child {
+  border-right: 1px solid #f0f1f3;
+}
+
+.countdownContainer > span {
+  font-size: 6.25rem;
+  margin: 0 0.5rem;
+}
+
+
+/* FOOTER */
+.container footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container footer button.resetButton {
+  width: 80%;
+  height: 4.5rem;
+
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 5px;
+
+  background: var(--blue);
+  color: var(--white);
+
+  font-size: 1.25rem;
+  font-weight: 600;
+
+  transition: background-color 0.2s;
+}
+
+.container footer button.resetButton:hover {
+  background: var(--blue-dark);
+}
+
+.container footer button.confirmResetButton {
+  background: var(--red);
+} 
+
+.container footer button.confirmResetButton:hover {
+  background: #bd1c36;
+}
+
+.container footer button.confirmResetButton i {
+  margin: 0 1rem 0 1rem;
+}
+
+.container footer button.applyButton {
+  width: 60%;
+  height: 3rem;
+
+  position: absolute;
+  bottom: 1rem;
 }
