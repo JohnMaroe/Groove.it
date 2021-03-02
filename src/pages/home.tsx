@@ -6,7 +6,7 @@ import { Countdown } from "../components/Countdown";
 import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from "../components/Profile";
 import { ChallengeBox } from "../components/ChallengeBox";
-import { DarkModeToggler } from '../components/darkModeToggler';
+import { DarkModeToggler } from '../components/DarkModeToggler';
 
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
