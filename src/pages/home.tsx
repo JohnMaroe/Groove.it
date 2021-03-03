@@ -7,12 +7,12 @@ import { ExperienceBar } from "../components/ExperienceBar";
 import { Profile } from "../components/Profile";
 import { ChallengeBox } from "../components/ChallengeBox";
 import { DarkModeToggler } from '../components/DarkModeToggler';
+import { NavBar } from '../components/NavBar';
 
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
 
 import styles from '../styles/pages/Home.module.css';
-import { NavBar } from '../components/NavBar';
 
 interface HomeProps {
   level: number;

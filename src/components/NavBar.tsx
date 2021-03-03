@@ -1,5 +1,6 @@
-import { useContext, useState } from 'react';
-import { useRouter } from 'next/router'
+import { useContext } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import { ChallengesContext } from '../contexts/ChallengesContext';
 
@@ -16,11 +17,13 @@ export function NavBar({ icon }: NavBarProps) {
 
   return (
     <nav className={styles.container}>
-      <img 
-        src="/mini-logo.svg" 
-        alt="Move-it logo icon"  
-        className={isDarkMode ? styles.darkmodeImg : null}
-      />
+      <Link href="/">
+        <img 
+          src="/mini-logo.svg" 
+          alt="Move-it logo icon"  
+          className={isDarkMode ? styles.darkmodeImg : null}
+        />
+      </Link>
 
       <main>
         <input 

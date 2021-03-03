@@ -20,8 +20,8 @@
   background: var(--white);
   width: 100%;
   max-width: 625px;
-  height: 440px;
-  max-height: 440px;
+  height: 465px;
+  max-height: 465px;
   position: relative;
 
   padding: 2rem 3rem;
@@ -181,6 +181,7 @@
 /* FOOTER */
 .container footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -196,6 +197,7 @@
 
   border: 0;
   border-radius: 5px;
+  margin-bottom: 0.5rem;
 
   background: var(--blue);
   color: var(--white);
@@ -228,4 +230,8 @@
 
   position: absolute;
   bottom: 1rem;
+}
+
+.container footer a {
+  cursor: pointer;
 }

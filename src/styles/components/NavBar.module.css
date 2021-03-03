@@ -13,6 +13,8 @@
   position: absolute;
   top: 2.5rem;
   left: 2rem;
+
+  cursor: pointer;
 }
 
 .container img.darkmodeImg {

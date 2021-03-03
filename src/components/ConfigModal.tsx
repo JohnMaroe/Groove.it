@@ -1,9 +1,11 @@
 import { useState, useEffect, useContext } from 'react';
 import { useRouter } from 'next/router'
-import { ChallengesContext } from '../contexts/ChallengesContext';
+import { useSession, signOut } from 'next-auth/client'
 
 import styles from '../styles/components/ConfigModal.module.css';
+
 import { CountdownContext } from '../contexts/CountdownContext';
+import { ChallengesContext } from '../contexts/ChallengesContext';
 
 export function ConfigModal() {
   const [isChangeTimeActive, setIsChangeTimeActive] = useState(false);
@@ -19,6 +21,7 @@ export function ConfigModal() {
   const { setTime } = useContext(CountdownContext);
 
   const router = useRouter();
+  const [session] = useSession();
 
   function handleCountdownClickMinutes(type: string) {
     if (type === 'left') {
@@ -110,6 +113,7 @@ export function ConfigModal() {
             )
             }
             
+            <a onDoubleClick={() => signOut()}>Logout</a>
           </footer>
         </div>
       ) :

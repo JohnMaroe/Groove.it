@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { getSession } from 'next-auth/client';
+
 import { Login } from '../components/Login';
 
 import styles from '../styles/pages/Landing.module.css';
@@ -18,3 +20,19 @@ export default function Landing() {
     </div>
   );
 }
+
+export const getServerSideProps = async ({ req, res }) => {
+  const session = await getSession({ req });
+
+  if (session) {
+      return {
+          props: { session },
+          redirect: {
+              destination: '/home',
+              permanent: false
+          }
+      };
+  }
+
+  return { props: {} };
+};
