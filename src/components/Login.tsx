@@ -30,7 +30,7 @@ export function Login() {
 
   return (
     <div className={styles.container}>
-      <img src="/logo-full.svg" alt="Full logo text"/>
+      <img src="/discoball-full.png" alt="Full logo text"/>
 
       <strong>Bem-vindo</strong>
 

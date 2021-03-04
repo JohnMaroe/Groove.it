@@ -66,7 +66,7 @@ export function ConfigModal() {
         <div className={styles.container}>
           <header>
             <img 
-              src="/logo-full.svg" 
+              src="/discoball-full.png"
               alt="Move it logo" 
               className={isDarkMode ? styles.darkmodeImg : null}
             />
@@ -121,7 +121,7 @@ export function ConfigModal() {
         <div className={styles.container}>
           <header>
             <img 
-              src="/logo-full.svg" 
+              src="/discoball-full.png" 
               alt="Move it logo" 
               className={isDarkMode ? styles.darkmodeImg : null}
             />

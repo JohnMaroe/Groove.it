@@ -19,7 +19,7 @@ export function NavBar({ icon }: NavBarProps) {
     <nav className={styles.container}>
       <Link href="/">
         <img 
-          src="/mini-logo.svg" 
+          src="/discoball.svg" 
           alt="Move-it logo icon"  
           className={isDarkMode ? styles.darkmodeImg : null}
         />

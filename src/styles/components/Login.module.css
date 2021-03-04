@@ -8,7 +8,8 @@
 
 .container > img {
   width: 25rem;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
+  transform: scale(1.2) translateX(1rem);
 }
 
 .container strong {

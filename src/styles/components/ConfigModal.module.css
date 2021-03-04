@@ -36,12 +36,12 @@
 /* HEADER */
 .container header > img {
   position: absolute;
-  left: 1.8rem;
-  top: -1.6rem;
+  left: 0.8rem;
+  top: -0.6rem;
 
-  width: 9rem;
-  height: 9rem;
-  filter: invert(32%) sepia(26%) saturate(3368%) hue-rotate(214deg) brightness(88%) contrast(87%);
+  width: 18rem;
+  height: 6rem;
+  filter: invert(51%) sepia(94%) saturate(4633%) hue-rotate(222deg) brightness(92%) contrast(89%);
 }
 
 .container header > img.darkmodeImg {

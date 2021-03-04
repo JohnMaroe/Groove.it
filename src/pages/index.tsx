@@ -13,7 +13,7 @@ export default function Landing() {
       </Head>
 
       <section>
-        <img src="/logo.svg" alt="Logo image background" />
+        <img src="/discoball-gradient.svg" alt="Logo image background" />
 
         <Login />
       </section>

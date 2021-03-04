@@ -12,9 +12,11 @@
 .container img {
   position: absolute;
   top: 2.5rem;
-  left: 2rem;
+  left: 1.475rem;
+  width: 5rem;
 
   cursor: pointer;
+  filter: invert(51%) sepia(94%) saturate(4633%) hue-rotate(222deg) brightness(92%) contrast(89%);
 }
 
 .container img.darkmodeImg {

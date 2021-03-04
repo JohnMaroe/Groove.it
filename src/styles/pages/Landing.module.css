@@ -26,7 +26,10 @@
 .landingContainer section > img {
   position: absolute;
   top: 5rem;
-  left: 0;
+  left: 2rem;
+
+  height: 45rem;
+  transform: rotate(-15deg);
 }
 
 @media (max-width: 500) {
