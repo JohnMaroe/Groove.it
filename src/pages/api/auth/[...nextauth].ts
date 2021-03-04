@@ -1,11 +1,14 @@
 import NextAuth from 'next-auth'
 import Providers from 'next-auth/providers'
 
+const gitId = process.env.GITHUB_ID;
+const gitSecret = process.env.GITHUB_SECRET;
+
 const options = {
     providers: [
         Providers.GitHub({
-            clientId: process.env.GITHUB_ID,
-            clientSecret: process.env.GITHUB_SECRET
+            clientId: gitId,
+            clientSecret: gitSecret
         }),
     ],
 }
