@@ -15,12 +15,16 @@
   left: 1.475rem;
   width: 5rem;
 
-  cursor: pointer;
   filter: invert(51%) sepia(94%) saturate(4633%) hue-rotate(222deg) brightness(92%) contrast(89%);
 }
 
 .container img.darkmodeImg {
   filter: invert(66%) sepia(18%) saturate(1881%) hue-rotate(63deg) brightness(102%) contrast(88%);
+}
+
+.container img:hover {
+  cursor: pointer;
+  animation: spin ease 5s;
 }
 
 .container main {
@@ -86,4 +90,10 @@
 
 .container i {
   font-size: 1.7rem;
+}
+
+@keyframes spin {
+  from { transform: rotateY(0deg) scale(1); }
+  40% { transform: rotateY(180deg) scale(0.5); }
+  to { transform: rotateY(360deg) scale(1); }
 }

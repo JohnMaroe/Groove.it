@@ -9,7 +9,8 @@ import { ConfigModal } from '../components/ConfigModal';
 import { CountdownProvider } from './CountdownContext';
 
 interface Challenge {
-  type: 'body' | 'eye';
+  url: string;
+  movename: string;
   description: string;
   amount: number;
 }

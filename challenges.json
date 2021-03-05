@@ -1,62 +1,56 @@
 [
   {
-    "type": "body",
-    "description": "Estique um de seus braços com a palma da mão virada para frente e puxe os dedos para cima por 10 segundos por mão.",
-    "amount": 80
+    "url": "https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5eab384df7fab1469b7b3986_ezgif.com-optimize%20(13).gif",
+    "movename": "The 2 Step",
+    "description": "It really is as simple as stepping from side to side to the beat!",
+    "amount": 55
   },
   {
-    "type": "body",
-    "description": "Estique seu braço contra o peito e puxe-o utilizando o outro braço por 10 segundos por braço.",
-    "amount": 60
-  },
-  {
-    "type": "body",
-    "description": "Puxe seu pescoço com a ajuda da mão para a direita e para a esquerda, permanecendo na posição por alguns segundos.",
+    "url": "https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5eab38693c6843a4f4386b07_ezgif.com-optimize%20(12).gif",
+    "movename": "The Dougie",
+    "description": "You’ll be shifting your weight from side to side, but this time, adding some shoulder movements and a lil more attitude.",
     "amount": 70
   },
   {
-    "type": "body",
-    "description": "Com as duas mãos na parte de trás da cabeça, leve-a para baixo, alongando a parte de trás da região.",
-    "amount": 60
+    "url": "https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5eab3886a02ec4da255b1655_BODY_ROLL.gif",
+    "movename": "Body Rolls",
+    "description": "The key to break it down and focus on isolating each “section” of your body in order to create the rolling wave motion.",
+    "amount": 85
   },
   {
-    "type": "body",
-    "description": "Cruze as pernas e desça com as mãos esticadas em direção ao chão. Repita o movimento com a outra perna na frente.",
+    "url": "https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5eab389e3c68431828387d61_WOAH.gif",
+    "movename": "The Woah",
+    "description": "Since the locking arm motion is so sharp and pronounced, use the Woah to accent the heaviest bass beats in your favorite songs.",
+    "amount": 70
+  },
+  {
+    "url": "https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5eab38b3c9b42305940aafa3_GRAPEVINE.gif",
+    "movename": "The Grapevine",
+    "description": "Give the steps a little more variety by adding jumps, turns, hand claps, and finger snaps too!",
+    "amount": 85
+  },
+  {
+    "url": "https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5eab38c5b1c37eecaa4ddd35_KANGSTA_WOK.gif",
+    "movename": "The Kangsta Wok",
+    "description": "It combines the super simple concept of walking down steps with bounces and head bobs.",
+    "amount": 80
+  },
+  {
+    "url": "https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5eab38e80c6c922b50b51f00_FIGURE_8_SWAYS.gif",
+    "movename": "Figure 8 Sways",
+    "description": "Master this Figure 8 Sway pattern so that anyone you’re dancing with can easily pick up what you’re putting down.",
     "amount": 100
   },
   {
-    "type": "body",
-    "description": "Sentado, abra as pernas e tente encostar as palmas das mãos no chão, repita 3 vezes por 5 segundos.",
-    "amount": 80
-  },
-  {
-    "type": "body",
-    "description": "Puxe o joelho de encontro ao peito e segure, troque de perna após 10 segundos.",
-    "amount": 50
-  },
-  {
-    "type": "body",
-    "description": "Sentado, cruze uma perna e incline seu tronco à frente, troque de perna após 10 segundos.",
-    "amount": 80
-  },
-  {
-    "type": "eye",
-    "description": "Sentado, feche os olhos e cubra-os com as palmas da mão durante 2 minutos, depois abra normalmente.",
+    "url": "https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5eab3914db42462d2393ebe1_BIZ_MARKIE.gif",
+    "movename": "The Biz Markie",
+    "description": "Remember to allow your shoulders to bounce – the bounce is what gives this move its cool, laidback flavor.",
     "amount": 90
   },
   {
-    "type": "eye",
-    "description": "Em algum ambiente aberto, olhe o mais longe que puder em quatro direções por 3s, mexa apenas os olhos. Repita 3 vezes.",
-    "amount": 140
-  },
-  {
-    "type": "eye",
-    "description": "Usando os polegares, massage a área abaixo das sobrancelhas em movimentos circulares por 15 segundos.",
-    "amount": 70
-  },
-  {
-    "type": "body",
-    "description": "Em pé, gire a cintura o máximo que puder para a esquerda, segure por cinco segundos. Repita para a direita.",
-    "amount": 90
+    "url": "https://global-uploads.webflow.com/5e2b8863ba7fff8df8949888/5eab392976c5cb2c7d81fbc4_ELECTRIC_SLIDE.gif",
+    "movename": "The Electric Slide",
+    "description": "Considered a wedding and all-around party staple, it might look complicated at first, but it’s surprisingly easy!",
+    "amount": 120
   }
 ]

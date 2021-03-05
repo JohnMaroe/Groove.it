@@ -8,7 +8,7 @@
   justify-content: right;
   align-items: center;
 
-  background: var(--blue);
+  background: #3e3f46;
   color: white;
 }
 
@@ -30,9 +30,11 @@
 
   height: 45rem;
   transform: rotate(-15deg);
+
+  filter: invert(100%) sepia(82%) saturate(2460%) hue-rotate(182deg) brightness(128%) contrast(87%);
 }
 
-@media (max-width: 500) {
+@media (max-width: 500px) {
   .landingContainer {
     height: 100vh;
     max-width: 100vw;
@@ -43,7 +45,6 @@
     justify-content: right;
     align-items: center;
 
-    background: var(--blue);
     color: white;
   }
 

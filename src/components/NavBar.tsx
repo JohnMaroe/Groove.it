@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Cookies from 'js-cookie';
 
 import { ChallengesContext } from '../contexts/ChallengesContext';
 
@@ -11,7 +12,7 @@ interface NavBarProps {
 }
 
 export function NavBar({ icon }: NavBarProps) {
-  const { isDarkMode, setIsConfigUpModalOpen } = useContext(ChallengesContext);
+  const { setIsConfigUpModalOpen } = useContext(ChallengesContext);
 
   const router = useRouter();
 
@@ -21,7 +22,7 @@ export function NavBar({ icon }: NavBarProps) {
         <img 
           src="/discoball.svg" 
           alt="Move-it logo icon"  
-          className={isDarkMode ? styles.darkmodeImg : null}
+          className={Cookies.get('mode') === 'dark' ? styles.darkmodeImg : ''}
         />
       </Link>
 

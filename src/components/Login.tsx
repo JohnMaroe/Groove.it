@@ -32,7 +32,9 @@ export function Login() {
     <div className={styles.container}>
       <img src="/discoball-full.png" alt="Full logo text"/>
 
-      <strong>Bem-vindo</strong>
+      <strong>
+        Get up and <span>dance</span>!
+      </strong>
 
       <div>
         {session && (

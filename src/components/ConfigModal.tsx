@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
-import { useRouter } from 'next/router'
-import { useSession, signOut } from 'next-auth/client'
+import { useRouter } from 'next/router';
+import { useSession, signOut } from 'next-auth/client';
+import Cookies from 'js-cookie';
 
 import styles from '../styles/components/ConfigModal.module.css';
 
@@ -17,7 +18,7 @@ export function ConfigModal() {
   const [minuteLeft, minuteRight] = String(minutesTemp).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(secondsTemp).padStart(2, '0').split('');
 
-  const { isDarkMode, setIsConfigUpModalOpen, resetProgress } = useContext(ChallengesContext);
+  const { setIsConfigUpModalOpen, resetProgress } = useContext(ChallengesContext);
   const { setTime } = useContext(CountdownContext);
 
   const router = useRouter();
@@ -60,7 +61,8 @@ export function ConfigModal() {
 
   return (
     <div 
-      className={`${styles.overlay} ${isDarkMode ? styles.overlayDark : null}`}
+      className={`${styles.overlay}
+      ${Cookies.get('mode') === 'dark' ? styles.overlayDark : null}`}
     >
       { !isChangeTimeActive ? (
         <div className={styles.container}>
@@ -68,7 +70,7 @@ export function ConfigModal() {
             <img 
               src="/discoball-full.png"
               alt="Move it logo" 
-              className={isDarkMode ? styles.darkmodeImg : null}
+              className={Cookies.get('mode') === 'dark' ? styles.darkmodeImg : ''}
             />
             
             <button type="button" onClick={() => setIsConfigUpModalOpen(false)}>
@@ -79,14 +81,16 @@ export function ConfigModal() {
           <main>
             <div onClick={() => {router.push('/api/exercises');}}>
               { 
-                isDarkMode ? <img src="/images/yoga-dark.svg" alt="Woman doing yoga" />
+                Cookies.get('mode') === 'dark' ?
+                <img src="/images/yoga-dark.svg" alt="Woman doing yoga" />
                 : <img src="/images/yoga.svg" alt="Woman doing yoga" />
               }
               <p>Veja todos os exercisos</p>
             </div>
             <div onClick={() => setIsChangeTimeActive(true)}>
               { 
-                isDarkMode ? <img src="/images/alarm-dark.svg" alt="Alarm picture" />
+                Cookies.get('mode') === 'dark' ?
+                <img src="/images/alarm-dark.svg" alt="Alarm picture" />
                 : <img src="/images/alarm.svg" alt="Alarm picture" />
               }
               <p>Mude a duração do countdown</p>
@@ -123,7 +127,7 @@ export function ConfigModal() {
             <img 
               src="/discoball-full.png" 
               alt="Move it logo" 
-              className={isDarkMode ? styles.darkmodeImg : null}
+              className={Cookies.get('mode') === 'dark' ? styles.darkmodeImg : ''}
             />
             
             <button type="button" onClick={() => setIsConfigUpModalOpen(false)}>

@@ -25,11 +25,12 @@ export function ChallengeBox() {
         <header>Ganhe {activeChallenge.amount} xp</header>
 
         <main>
-          { activeChallenge.type === 'body' ? 
-            <img src="icons/body.svg" alt="Body Challenge Icon"/> :
-            <img src="icons/eye.svg" alt="Eye Challenge Icon"/>
-          }
-          <strong>Novo desafio</strong>
+          <img 
+            src={activeChallenge.url}
+            alt="Body Challenge Icon"
+            className={styles.gif}
+          />
+          <strong>{activeChallenge.movename}</strong>
           <p>{activeChallenge.description}</p>
         </main>
 

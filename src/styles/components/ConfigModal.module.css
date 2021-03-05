@@ -100,6 +100,7 @@
 .container main div img {
   width: 11rem;
   height: 12rem;
+  margin-bottom: 1rem;
 }
 
 .container main div p {

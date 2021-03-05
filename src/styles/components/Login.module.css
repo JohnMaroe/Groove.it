@@ -10,12 +10,19 @@
   width: 25rem;
   margin-bottom: 4rem;
   transform: scale(1.2) translateX(1rem);
+
+  filter: drop-shadow(0 0 6.5px #868686);
 }
 
 .container strong {
   font-size: 3rem;
   font-weight: 600;
   margin-bottom: 2.5rem;
+}
+
+.container strong span {
+  color: var(--red);
+  text-decoration: underline;
 }
 
 .container div {
@@ -42,12 +49,12 @@
 .container div a i {
   margin-right: 2rem;
   font-size: 3rem;
-  color: var(--text-highlight)
+  color: #b3b4bd;
 }
 
 .container div a span {
   font-size: 1.5rem;
-  color: var(--text-highlight)
+  color: #b3b4bd;
 }
 
 .container form {
@@ -61,23 +68,23 @@
   border: 0;
   outline: 0;
 
-  background: var(--blue);
-  background: linear-gradient(90deg, rgba(73,83,184,1) 40%, rgba(73,83,184,0.2) 100%);
-  color: var(--white);
+  background: rgb(36, 36, 40);
+  background: linear-gradient(90deg, rgb(36, 36, 40) 40%, rgba(59, 60, 79, 0.2) 100%);
+  color: #fff;
 
   padding: 1rem;
   border-radius: 5px;
 }
 
 .container form input::placeholder {
-  color: var(--text-highlight)
+  color: #b3b4bd;
 }
 
 .container form button {
   border: 0;
   padding: 2rem;
   color: #eee;
-  background: var(--green);
+  background: #4cd62b;
   border-radius: 3px;
 
   transition: all 200ms;
@@ -88,5 +95,5 @@
 }
 
 .container form button:disabled {
-  background: rgb(73,83,184,0.8);
+  background: rgb(36, 36, 40);
 }
