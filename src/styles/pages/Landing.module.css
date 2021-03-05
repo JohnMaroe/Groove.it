@@ -16,18 +16,13 @@
   flex: 1;
 
   height: 100vh;
-  max-width: 800px;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .landingContainer section > img {
-  position: absolute;
-  top: 5rem;
-  left: 2rem;
-
   height: 45rem;
   transform: rotate(-15deg);
 
@@ -57,5 +52,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .landingContainer section > img {
+    display: none;
   }
 }
